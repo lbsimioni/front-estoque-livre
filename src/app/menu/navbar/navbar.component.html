@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+        <img class="img-thumbnail" src="assets/img/profile.jpg" 
+        alt="Imagem de perfil" />
+    </button>
+    <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item>Meu perfil</button>
+        <button mat-menu-item>Sair</button>
+    </mat-menu>
+    
+</mat-toolbar>

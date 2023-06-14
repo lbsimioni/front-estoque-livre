@@ -1,0 +1,46 @@
+<mat-list>
+    <div mat-subheader>
+        <a mat-button class="ps-0" routerLink="/">
+            <mat-icon class="me-1">bar_chart</mat-icon>
+            Dashboard
+        </a>
+    </div>
+    <div mat-subheader>
+        <mat-icon class="me-1">shopping_cart</mat-icon>
+        Mercadorias
+    </div>
+    <mat-list-item>
+        <a mat-button matListItemLine
+        routerLink="/merchandise/list">Listar mercadorias</a>
+    </mat-list-item>
+    <mat-list-item>
+        <a mat-button href="#" matListItemLine
+        routerLink="/merchandise/new">Inserir mercadoria</a>
+    </mat-list-item>
+
+    <div mat-subheader>
+        <mat-icon class="me-1">inventory</mat-icon>
+        Estoque
+    </div>
+    <mat-list-item>
+        <a mat-button href="#" matListItemLine
+        routerLink="/stock/list">Listar estoque</a>
+    </mat-list-item>
+    <mat-list-item>
+        <a mat-button href="#" matListItemLine
+        routerLink="/stock/new">Inserir estoque</a>
+    </mat-list-item>
+
+    <div mat-subheader>
+        <mat-icon class="me-1">paid</mat-icon>
+        Tabela de preços
+    </div>
+    <mat-list-item>
+        <a mat-button href="#" matListItemLine
+        routerLink="/price/list">Listar preços</a>
+    </mat-list-item>
+    <mat-list-item>
+        <a mat-button href="#" matListItemLine
+        routerLink="/price/new">Inserir preço</a>
+    </mat-list-item>
+</mat-list>

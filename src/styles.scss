@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-toolbar-single-row {
+    justify-content: space-between;
+
+    .mat-button-wrapper {
+        padding: 0 !important;
+    }
+}
+
+.img-thumbnail {
+    border-radius: 100%;
+}
+
+.mat-drawer-container {
+    height: calc(100vh - 64px);
+}
+
+.mat-drawer.mat-drawer-side {
+    background-color: #3f51b5;
+    color: #fff;
+
+    .mat-list-base .mat-subheader, 
+    .mat-list-base .mat-list-item a, 
+    .mat-list-base .mat-subheader a {
+        color: #fff;
+    }
+}
+
+@media (max-width: 599px) {
+    .mat-drawer-container {
+        height: calc(100vh - 56px);
+    }
+}
