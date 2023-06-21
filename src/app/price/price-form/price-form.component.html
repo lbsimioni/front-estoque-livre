@@ -1,1 +1,55 @@
-<p>price-form works!</p>
+<h1 class="text-center mt-2">Cadastro de Preço</h1>
+
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Mercadoria</mat-label>
+                <mat-select formControlName="mercadoria">
+                    <mat-option value="one">Mercadoria A</mat-option>
+                    <mat-option value="two">Mercadoria B</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <mat-form-field>
+                <mat-label>Valor</mat-label>
+                <input matInput formControlName="valor"
+                currencyMask
+                [options]="{ prefix: 'R$ ', thousands: ' ', decimal: '.' }">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <mat-form-field>
+                <mat-label>Promoção</mat-label>
+                <input matInput formControlName="promocao"
+                currencyMask
+                [options]="{ prefix: 'R$ ', thousands: ' ', decimal: '.' }">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <mat-form-field>
+                <mat-label>Data de início</mat-label>
+                <input matInput type="datetime-local" formControlName="dataInc">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <mat-form-field>
+                <mat-label>Data de término</mat-label>
+                <input matInput type="datetime-local" formControlName="dataFim">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row full-button-container">
+        <button class="" mat-raised-button color="primary" 
+        [disabled]="!form.valid || form.pristine || !form.dirty">Confirmar</button>
+    </div>
+    
+</form>

@@ -15,7 +15,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
 }
 
-.img-thumbnail {
+.profile-image {
     border-radius: 100%;
 }
 
@@ -32,6 +32,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .mat-list-base .mat-subheader a {
         color: #fff;
     }
+}
+
+.mat-form-field, .mat-form-field-wrapper, .mat-form-field-flex {
+    height: 100%;
+}
+
+.merchandise-description {
+    resize: none !important;
+}
+
+.reset-container-form {
+    height: 100%;
+    padding-top: 0.25rem;
+    padding-bottom: 1.49375em;
+
+    .merchandise-figure-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        border-radius: var(--bs-border-radius);
+    
+        * {
+            max-width: 99%;
+            max-height: 99%;
+            border-radius: var(--bs-border-radius);
+        }
+    }
+}
+
+.full-button-container {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
 }
 
 @media (max-width: 599px) {
