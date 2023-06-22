@@ -43,9 +43,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .reset-container-form {
-    height: 100%;
+    height: calc(100% - 1.69375em);
     padding-top: 0.25rem;
-    padding-bottom: 1.49375em;
 
     .merchandise-figure-container {
         height: 100%;
@@ -66,6 +65,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .full-button-container {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.mat-table {
+    width: 100%;
+}
+
+.mat-form-field-disabled {
+    cursor: no-drop;
 }
 
 @media (max-width: 599px) {

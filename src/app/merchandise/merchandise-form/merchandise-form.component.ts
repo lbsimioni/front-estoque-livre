@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Merchandise } from '../merchandise.model';
 
 @Component({
   selector: 'app-merchandise-form',
@@ -7,11 +9,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MerchandiseFormComponent implements OnInit {
   form: FormGroup;
+  edit: boolean = false;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.initForm();
+
+    this.route.data.subscribe((data: any) => {
+      const merchandise: Merchandise = data['merchandise'];
+      this.form.patchValue(merchandise);
+      if (merchandise) this.edit = true;
+    });
   }
 
   private initForm() {

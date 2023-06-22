@@ -6,8 +6,9 @@
             <mat-form-field>
                 <mat-label>Mercadoria</mat-label>
                 <mat-select formControlName="mercadoria">
-                    <mat-option value="one">Mercadoria A</mat-option>
-                    <mat-option value="two">Mercadoria B</mat-option>
+                    <mat-option 
+                        *ngFor="let m of merchandises" 
+                        [value]="m.codigo">[{{ m.marca }}] {{ m.nome }} - {{ m.modelo }} - {{ m.ncmSh }}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>

@@ -1,1 +1,39 @@
-<p>price-list works!</p>
+<h1 class="text-center mt-2">Controle de Estoque</h1>
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+
+<!-- Merchandise Column -->
+    <ng-container matColumnDef="mercadoria">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mercadoria </th>
+        <td mat-cell *matCellDef="let element"> {{element.mercadoria}} </td>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor. </th>
+        <td mat-cell *matCellDef="let element"> {{element.valor | currency: 'BRL'}} </td>
+    </ng-container>
+
+    <!-- Promotion Column -->
+    <ng-container matColumnDef="promocao">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Promoção </th>
+        <td mat-cell *matCellDef="let element"> 
+            {{element.promocao | currency: 'BRL'}} 
+        </td>
+    </ng-container>
+
+    <!-- DataInic Column -->
+    <ng-container matColumnDef="dataInc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Data Inic. </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataInc}} </td>
+    </ng-container>
+
+    <!-- DataFim Column -->
+    <ng-container matColumnDef="dataFim">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Data Enc. </th>
+        <td mat-cell *matCellDef="let element"> {{ element.dataFim }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
