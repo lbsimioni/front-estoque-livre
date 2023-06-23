@@ -1,6 +1,6 @@
-<h1 class="text-center mt-2">Cadastro de Preço</h1>
+<h1 class="text-center">Cadastro de Preço</h1>
 
-<form [formGroup]="form">
+<form [formGroup]="form" (submit)="submit()">
     <div class="row">
         <div class="col">
             <mat-form-field>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="row full-button-container">
-        <button class="" mat-raised-button color="primary" 
+        <button type="submit" mat-raised-button color="primary" 
         [disabled]="!form.valid || form.pristine || !form.dirty">Confirmar</button>
     </div>
     

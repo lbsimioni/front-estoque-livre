@@ -40,6 +40,8 @@ import { StockService } from './stock/stock.service';
 import { StockListResolver } from './stock/stock-list/stock-list.resolver';
 import { PriceService } from './price/price.service';
 import { PriceListResolver } from './price/price-list/price-list.resolver';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './alert/alert.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { PriceListResolver } from './price/price-list/price-list.resolver';
     StockListComponent,
     StockFormComponent,
     DashboardComponent,
+    AlertComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -86,6 +89,7 @@ import { PriceListResolver } from './price/price-list/price-list.resolver';
     StockListResolver,
     PriceService,
     PriceListResolver,
+    AlertService,
   ],
   bootstrap: [AppComponent],
 })

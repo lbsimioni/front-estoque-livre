@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-price-list',
   templateUrl: './price-list.component.html',
-  styleUrls: ['./price-list.component.scss'],
 })
 export class PriceListComponent implements OnInit {
   displayedColumns: string[] = [

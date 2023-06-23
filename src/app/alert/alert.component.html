@@ -1,0 +1,11 @@
+<div *ngFor="let a of getAlerts() | async"
+    class="alert" role="alert" [@fade]
+    [ngClass]="a.level === 'success' ? 'alert-success' : 
+        a.level === 'warn' ? 'alert-warning' : 'alert-danger'">
+    {{ a.message }}
+    <button mat-icon-button class="float-end button-reset-top"
+        (click)="removeButton(a.id)">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<br>

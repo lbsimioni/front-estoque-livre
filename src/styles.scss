@@ -75,6 +75,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: no-drop;
 }
 
+.button-reset-top {
+    top: -9px
+}
+
+.alert {
+    margin: 0;
+    border-radius: 0;
+}
+
+.alert:last-child {
+    border-end-end-radius: var(--bs-alert-border-radius);
+    border-end-start-radius: var(--bs-alert-border-radius);
+}
+
+.reset-animation {
+    height: 1px;
+    width: 100%;
+}
+
 @media (max-width: 599px) {
     .mat-drawer-container {
         height: calc(100vh - 56px);

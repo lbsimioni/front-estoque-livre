@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AlertService } from 'src/app/alert/alert.service';
 import { Merchandise } from 'src/app/merchandise/merchandise.model';
 
 @Component({
@@ -12,7 +13,7 @@ export class PriceFormComponent implements OnInit {
 
   merchandises: Merchandise[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private alert: AlertService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -20,6 +21,14 @@ export class PriceFormComponent implements OnInit {
     this.route.data.subscribe((data: any) => {
       this.merchandises = data['merchandises'];
     });
+  }
+
+  submit(): void {
+    this.alert.addAlert({
+      level: 'success',
+      message: 'Tabela de preço inserida com sucesso',
+    });
+    this.form.reset();
   }
 
   private initForm() {

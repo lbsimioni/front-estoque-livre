@@ -1,6 +1,6 @@
-<h1 class="text-center mt-2">{{ edit ? 'Edição' : 'Cadastro' }} de Mercadoria</h1>
+<h1 class="text-center">{{ edit ? 'Edição' : 'Cadastro' }} de Mercadoria</h1>
 
-<form [formGroup]="form">
+<form [formGroup]="form" (submit)="submit()">
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <mat-form-field>
@@ -118,7 +118,7 @@
     </div>
 
     <div class="row full-button-container">
-        <button class="" mat-raised-button color="primary" 
+        <button type="submit" mat-raised-button color="primary" 
         [disabled]="!form.valid || form.pristine || !form.dirty">Confirmar</button>
     </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Merchandise } from '../merchandise.model';
+import { AlertService } from 'src/app/alert/alert.service';
 
 @Component({
   selector: 'app-merchandise-form',
@@ -11,7 +12,7 @@ export class MerchandiseFormComponent implements OnInit {
   form: FormGroup;
   edit: boolean = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private alert: AlertService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -21,6 +22,21 @@ export class MerchandiseFormComponent implements OnInit {
       this.form.patchValue(merchandise);
       if (merchandise) this.edit = true;
     });
+  }
+
+  submit(): void {
+    if (this.edit) {
+      this.alert.addAlert({
+        level: 'success',
+        message: 'Produto alterado com sucesso!',
+      });
+    } else {
+      this.alert.addAlert({
+        level: 'success',
+        message: 'Produto cadastrado com sucesso!',
+      });
+      this.form.reset();
+    }
   }
 
   private initForm() {
